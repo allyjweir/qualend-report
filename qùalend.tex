@@ -1,0 +1,207 @@
+\documentclass{mpaper}
+\usepackage{url}
+
+\begin{document}
+
+\title{Effectiveness of Nagware in Signposting Online Threats}
+\author{Alastair Weir, James Stewart}
+\matricnum{1101682w, 1000039s}
+
+\maketitle
+
+\begin{abstract}
+% According to Simon Peyton Jones, an abstract should address
+% four key questions. First, what is the problem that this
+% paper tackles? Second, why is this an interesting problem?
+% Third, what is the solution this paper proposes?
+% Finally, why is the proposed solution a good one?
+
+% risk mitigation and risk communication
+
+Over the past decade the number of resources, tools and applications available to us online has grown exponentially. As use as increased so has the number of security risks risen. There has been extensive research into improving internet users' understanding of possible online threats. This paper proposes that the use of nagware alongside the current browser warning system can raise a user's awareness of dangers and influence their approach to insecure websites. This approach finds success in pushing users to educate themselves while warning them of the dangers that face them online.
+\end{abstract}
+
+\section{Introduction}
+Web users want to ensure that their online sessions are both secure and private whilst also retaining the freedom to access what they want online. Browser developers are challenged to find a suitable balance between free roaming whilst keeping their users safe from potential dangers. Currently most modern browsers will display active security warnings, requiring a user to 'click through' a page describing the potential danger of the requested site. Studies show\cite{WarningLand} that the majority of users will ignore browser warnings and continue on to the requested site. With this in mind, our aim is to evaluate the effectiveness of 'nagware' as a means of increasing the users awareness of the dangers involved with the site requested.
+
+Nagware is a name most commonly given to shareware which repeatedly reminds and prompts the user to perform an action, most commonly the registration of software. In the context of our experiment this definition has been altered to software which presents a near constant visual or audio interface to alert users of potential insecurities.
+
+The main purpose for our study is to investigate the effect an additional layer of browser security warning has on participants. The additional layer in our case is that of our own designed audio and visual nagware. As the amount of sensitive data users enter online each day is so vast, we believe that a study of this nature is key to providing the best protection for the public online. 
+% The purpose of our study was to investigate the effect of an additional layer of browser warning on a users perception of a websites security. In order to do so, we conducted a laboratory experiment where users were split into groups assigned to 1 of 3 conditions. Each group aimed to consist of both 'techinical' and 'non-technical' users and the conditions they were assigned to were designed to test out the effect of an additional visual and audio warning layer. 
+
+% Each group of participants had to undergo a number of tasks which included those that require the user to input or share sensitive data. At points during a number of these tasks, the user was presented with an active browser warning. In the case of 2 of the 3 user groups, should they chose to 'click through' the warning pages, they would be presented with either the visual or audio warnings during their time on that page. We have chosen to limit the active browser warning displayed to that of an SSL warning. This is because the warning generation method is reliable and easy to implement through the utilisation of a self signed certificate. The experiment has also been limited to Google Chrome and Chromium browsers. This is due to previous studies \cite{WarningLand} indicating that the clickthrough rate on SSL warnings for Chrome is around 70\% which will hopefully allow us to more accurately measure the impact of the new warnings. 
+
+% As the evaluation required the input and sharing of sensitive data, our participants were informed to use data provided or, in the case of the creation of user accounts, to use details which bore no resemblance to any which they currently use. We also designed the test sites in such a way that no user input is saved and rather have mocked the information steps according to the steps detailed within the users tasks.  
+
+The rest of the paper is organised as follows. Section 2 explores the body of work which has been previously done in this area and explore how our study expands upon this. Section 3 will look at the methodology of our experiment and will report upon our findings. Section 4 discusses the impact of the experimental findings and the insights which it provides into how to improve upon and effect a users understanding of the risks online. We conclude in Section 5.
+% Here you explain the purpose of the experiment. What is the motivation for the study?
+% General description of the problem, motivation, relevance.
+% Describe structure of the paper. 
+
+\section{Background Research}
+\subsection{Problem Identification \& Description}
+%Identify a problem from the literature. Say whether you're going to study it in terms of verifying that it does indeed exist and is important, or whether you intend to carry out an experiment.
+
+There have been many studies on the topic of browser security with many looking at the role users play in keeping their sessions and browsers secure. A key aspect repeatedly highlighted is a user's lack of knowledge or care about security was key in exposing themselves to danger. As Felten and McGraw humourously stated, ``Given a choice between dancing pigs and security, the user will pick dancing pigs every time!!''.\cite{dancingpigs}
+
+Sunshine, Egelman et al\cite{Sunshine09cryingwolf}. experimented to gauge user reactions to existing SSL warnings in browsers. They found that for users unfamiliar with SSL warnings, the perception of the risk was the main contributing factor which determind whether or not they would proceed. A study by Akahwe and Felt\cite{WarningLand} further expands upon this through a large scale study designed to test the effectiveness of current browser warnings. They found that the presentation of the warning is a key factor and noted that despite roadblocks placed to allow users to bypass the Chrome warnings, 70.2\% of the time users would still advance to the insecure resource. 
+
+Dhymaja et al.\cite{whyphish} as well as various other studies\cite{emperors} \cite{Gathering} \cite{warned} also highlight the ineffectiveness of the current designs for in browser security cues. Their study found that 23\% of participants do not even take note of security cues and that 15 out of 22 participants did not take heed of the SSL warnings presented.
+
+Although there have been many suggestions on how to improve upon these warnings, there seems to be a overwhelming view that the main way to go to improve browser security is reducing the responsibilities of the user. One suggestion for this was the use of a tool called ForceHTTPS\cite{Jackson08forcehttps:protecting}. ForceHTTPs worked in a way that would force browsers to use https for connections to the site as well as forcing the browser to be more strict when dealing with SSL connections. While this is a great proposal it doesn't seem to have caught on.
+
+% To identify the success of alternative warning methods, this paper will discuss findings of an experiment with new types of 'nagware'. Applied in an e-commerce setting, where trust and the sharing of personal details are key, the experiment will record user's reactions and experiences. These findings will inform how successful these new methods are to existing systems used in web browsers and whether they would could be implemented and affect change in an internet user's habits.
+% I feel like this could be better reformed into the end of the new reduced intro.
+
+
+\subsection{Justification}
+%Why is it important?
+%What is anticipated the {\bf Utility} of the Experiment? Is it \textsf{feasible}? Can you measure the problem or the effects of your experiment {\em accurately}? 
+From the literature surrounding the topic, it is clear current warning systems are ineffective. Large numbers of uninformed users access dangerous sites, needlessly opening themselves to numerous attack vectors. This leads to either personal stress or financial loss, both of which reduce a user's use and trust of internet based services and systems. 
+
+Through the implementation of additional nagware warnings based on research espounging their effectiveness, it is hoped to increase trust in verified sites and make the security dangers clearer to the typical user. This will ideally make them less likely to disclose any sensitive information and decrease the time spent on the insecure resource. 
+
+Throughout the course of the experiment we will be recording a range of data gathered from observations of the user, user feedback and questionaires to allow us to effectively analyse the use of nagware. We will encourage the user to act as they would in their day to day life when performing the tasks in order to ensure the data collected is as accurate as possible. We will also note users reactions to the new nagware to ensure that the technology is not causing undue stress. 
+
+%This being said, there are some infeasibilities with the experiment as it has been run. Certain studies\cite{Onthechallenges} suggest that users will not act as they normally would under laboratory conditions. This is due to the fact that they assume the tasks set by the researcher would be secure and as a role player they do not feel the same responsibility to ensure the information that they have been provided. It has also previously been observed that participants take less care when it isn't their own personal details.
+
+\subsection{Hypotheses}
+Our experimental hypothesis and null hypothesis are as follows:
+
+\begin{quote}
+Does nagware increase the awareness of the dangers of insecure sites and cause users to avoid insecure websites while browsing.
+\end{quote}
+\begin{quote}
+The null hypothesis is that extra nagware warning do not affect user's activities when interacting with insecure websites.
+\end{quote}
+\section{Experiment Execution}
+\subsection{Recruitment}
+The participants aimed to be recruited from a mixture of backgrounds. In reality, the majority came from technical backgrounds. These informed users were undergraduate Computer Scientists with multiple years of education on internet security. Their computer uses widely ranged.
+
+It was ensured all participants were free from hearing and visual problems and that they were familiar with basic computer use along with the accompanying terminology. Participants highly sensitive to flashing lights were also excluded from taking part due to the nature of one of its components.
+
+\subsection{Ethical Considerations}
+Participants were briefed of the tasks prior to starting the experiment. It was presented under the guise of a usability test of a new e-commerce site. They were advised that they were able to ask questions if they got stuck and that at any point they were free to walk away from the experiment and, if wanted, have any related data deleted.
+
+The misleading of participants was necessary as to not direct their reactions or mindsets. Placing an importance on security would make them more wary of anything they might perceive as insecure, voiding any valuable results from the experiment. To avoid any inpropriety regarding personal details or financial information, a set of false information was provided to each participant in place of their own details.
+
+Throughout development of the experiment, it was ensured no personal information was captured or stored. Participants were reassured of this and the source code was made availble for public review within the project's open repository on GitHub.
+
+\subsection{Conducting the Experiment}
+% Don't repeat the design here. Explain how you carried it out. 
+% How long did it take? Anything the participants said.
+% Did you have any problems?
+% Did you run into any difficulties?
+% Did anything compromise the accuracy of your measurements?
+
+The experiment was conducted in a laboratory setting to allow for there to be no distractions to the user. 45 minutes was originally set aside for each participant but this was found to be far too much time We gave participants 15 minutes to complete the tasks and encouraged the users to provide feedback both during and after their experience. This reduced time made it easier to get more subjects. Participants were split into three groups: control, audio, and visual. These groups were subjected to either the existing warnings or the original warning accompanied by an audio or visual nagware component. This ensured that results weren't biased by the test group size. 
+
+Due to the cumbersome server configuration setup, it was slow to setup for a subject or change for the next person. It was also prone to human error. This meant on one occasion where a nag was intended to show it didn't. Luckily due to the design of the experiment, this subject's results could be included in the control groups.
+
+The results were felt to be less accurate due to participants being able to read our body language when they asked questions related to the nags. This was compounded by different runs of the experiment being conducted by different members of the research team. In future this would have to be standardised in some way.
+
+Headphones were given to all participants. This possibly served as a hint to what might be coming in the experiment and left them predisposed to pay attention to anything auditory.
+
+Some subjects didn't take the transactional task seriously as it wasn't their credit card details being used. 
+
+\subsection{Results}
+The results were gathered from a small test group of nine people. Due to time restrictions and the need to be there while the participant completed the experiment, the number of people and the range of their backgrounds was severly restricted. What this did allow for was the experiment to focus on effects of nagware on users with technical experience. The results portrayed the clear imbalance between knowing how they should act and how they did act.
+
+Those in the groups presented with nagware were found to be more cautious than those presented with the defualt warnings. This was demonstrated in their increased likeliness to proceed with visible caution or to stop what they were doing completely. It was found that the majority of participants fully completed all the tasks. This was thought to be due to the labratory setting and perceived pressure to complete the instructions given to them.
+
+It was found that the audio nagware was incredibly effective. Users demonstrated a high level of irritation from the alarm sounds played through the headphones. This was seen in their body language as well as, in one case, physically removing the headphones and turning the volume down. In speaking to this participant it was found this wasn't due to just irritation but the shock of loud noises as well. In the post-experiment survey, the audio nagware was rated extremely highly on the scale (0-10) given. Participants found that it instinctually raised their awareness of some form of unidentifiable danger.
+
+The visual nagware presented more mixed results. Participants reported much lower levels of irritation compared to the audio nagware. It was found however, as with the audio nagware, still to raise awareness of an unspecific and undefinable danger on the page. Those who were presented with this nagware were more likely to close the task after encountering it than those shown Chrome's defualt warning. The speed with which and percentage that stopped the tasks was still lower than the audio version. From speaking with participants, this was because they found this easy to tune out and get on with the task whereas participants given the auditory nagware felt it prompted a more immediate reaction.
+
+From the post-experiment survey, it was very clear that the type of task given was important. The majority found that they were more cautious because a transaction was involved. When prompted further, this revealed an ingrained hierarchy of importance when it came to accounts and passwords. Where it was felt that security was important (such as online shopping and banking) participants were more cautious when encountering warning screens. Other accounts they were less precious with and disregarded security as a non-issue. One participant pointed out that for this experiment they didn't care because it wasn't real and the money at risk wasn't theirs.
+
+\section{Discussion \& Insights}
+\subsection{Discussion} 
+% -Successful in proving question
+%     -everyone who got the extra warnings was more concerned
+%     -body language and actions supported this finding
+%     -higher percentage stopped task or asked the experimenter if they could stop (we didn't help them but had warned them at the start)
+    
+% Say whether/how you have answered your research questions. Say whether your hypotheses are supported or not. 
+
+Overall the experiment was sucessful in answering the question posed which was ``Does nagware make users stop and think more about the potential dangers insecure websites present?''. We found that in most cases, people who receieved the additional audio or visual warnings either stopped or expressed concerns with continuing with the experiment. When confronted with the addtional warnings, we observed that users would show facial expressions which conveyed concern, irritation and confusion as well as gutteral noises which conveyed confusion. These were all signs that they had stopped to consider continuing forward through the experiment. This suggests the current warning pages only elicit a logical, and often pragmatic, response. Our research suggests that the nagware confronts users on an emotional level that regularly elicited a more cautious approach. 
+
+Over half of the subjecs refused to complete the tasks given to them. Of these 5,  3 belonged to the audio nag group and 1 to the visual nag showing that these methods do increase a user's caution. The audio nagware was so effective that one participant commented ``[it] was far more striking than the on screen prompts. Made me consider stopping the task.''
+
+\subsection{Reflection} 
+% while effective, these warnings would be better served as part of the existing warning pages and not acutally on the page the person is trying to get to.
+
+% -Integration into the browser itself
+% -Browser extension
+
+% -Users become used to stuff. Limit that it only goes off in extremely dangerous sites/situations. Inclusive vs exclusive
+
+% -Change the warning
+
+% Now reflect, and say how you think your findings can be applied in other contexts
+
+Whilst the nagware augmentation was effective at stopping participants entering sensitive data, we found that it didn't help to increase the participants knowledge or understanding of the dangers which the nagware was there to warn against. One thing that the nagware did excel at was increasing the users awareness that there was a problem. With this in mind, we believe that there is merit in including these methods within the current browser warnings rather than on the insecure page itself. This would stop the user from advancing to the insecure resource at all. This could be done through direct integration with the browser itself or could be an optional plugin available to users.
+
+This being said, there is a question to be asked about whether the users will become used to the nagware over time. Throughout our background research\cite{WarningLand} an area that was often mentioned was 'warning fatigue' where users become accustomed to more frequent warnings. If nagware was to accompany the browser active warning we believe that it would be used to the best effect accompanying only the more extreme situations. This would ensure that it doesn't become victim to warning fatigue. In another context it could have a warning sound that changed pitch or tone regularly so if repeatedly encountered the audio nagware would still elicit a response.
+
+\subsubsection{Finding - High impact of auditory warning}%this title can be changed
+% -very clear audio is more effective.
+%     -high irritation
+%     -made everyone stop
+%     -big human impact for little impl
+%     -very clear to user
+%     -instinctual danger identification
+
+% -is this a one hit wonder.
+%     -would have to do a protracted experiment over a long time
+%     - 
+% We found a statistically significant different between our two groups of people. We surmise this is caused by our treatment.
+From our results, it is immediately clear that out of all three warning groups, the audio and active warning combination was the most effective in persuading users to navigate away from the potential insecure resource they are accessing. All participants exposed to the audio nag were observed to react in a highly irritated way with many removing the headphones or turning off the sound on their machine. After this initial experience with the audio nag users that chose to continue further in the experiment showed extreme hesitation to proceed past the next active warning as if there were some mental conditioning which had linked the act of clicking through a warning to the audio warning. This conditioning may be cultural as we have learnt to equate certain types of sounds with warning systems such as alarms. 
+
+The inclusion of audio nagware is simple to implement with little cost to the developer but big impact on the user. With this being said, there is little information to confirm whether this would reemain the same in the long term. It would therefore be beneficial for a long term investigation into the effects to be carried out. 
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\subsubsection{Finding - Poor utilisation of existing knowledge}
+
+% -technical users not informed as they should be about this:
+%     -many knew generic dangers and very unspecific danger warnings but didn't make use of all the ones available/possible
+%     -pushed to back of mind
+%     -feel safe on their personal machines
+%     -cite this is in agreement with James' paper he read/knows about
+
+% So users don't understand risk - what a surprise!
+% This confirms the finding reported by XXX
+
+Another second major finding from our experiment was technical users do not utilise the vast amount of tools available to identify security issues despite there knowledge of their existence. Users would look at superficial warning indicators such as the padlock or protocol used for accessing the site(http://, https://) but would not look at deeper indicators such as the padlock 'onclick' action which provides more detail on what causes the issue. An example of this from our results would be that out of all eleven participants, only two read the warning screen.
+
+The test group's disregard to utilise their knowledge was clear. In discussion many felt their experience and knowledge meant they didn't need to worry about security. It was also noted they had become desensitised to Chrome's warning screens due to their appearance on legitimate websites they regularly accessed. Their ignorance further confirms existing implementations fall short and more needs to be done to warn both technical and non-technical users away from online security dangers.
+
+\subsubsection{Limitations}
+In a future, more expansive run of this experiment, the context of the experiment would take a much higher presedence. The experiment would, with ethical approval, be run as an overlay upon existing websites that users regularly use and trust. Users that took part in the existing experiment doesn't allow a wholly accurate view of how users negate dangers and risks while browsing. Placing the nagware in these situations would more realistically simulate the dangers of a man-in-the-middle attack prevailant in public Wi-Fi networks\cite{mitmattacks}.
+
+The experiment would also be further modified to allow it to be run on participant's personal devices. This would inflate a subject's false sense of security and would encourage more realistic results from the experiment.
+
+In future iterations there would be a lot more effort put into diversifying the types of participants involved. While our failure in this iteration allowed for more specialised insight into a certain subsection of the population, their narrower perspective reduces the value of the results.
+ 
+\subsubsection{Returning to the Hypotheses}
+Based on our results, it has been found that the hypotheses has been supported. Both forms of nagware were successful in raising awareness that the current page presented danger to the user. The second aim of the hypotheses was also successful in warding users away from these dangerous sites. This shows the experiment, despite its limitations, to be successful in its aims.
+
+ \subsubsection{Utility of the Experimental Findings}
+Findings clearly show that nagware has a positive influence on user's actions on insecure sites. The results serve as confirmatory research to previous work, reinforcing their findings and suggestions.\cite{Sunshine09cryingwolf} New warning methods are needed within browsers. Users do not pay attention to existing warning systems and this can endanger their information security. 
+
+This paper would be useful to teams that focus on building trust with users online and possibly software engineers who contribute to the development of web browsers.
+
+\section{Conclusions}
+In conclusion, the results clearly show that the hypothesis was correct. User awareness was raised in a non-confrontational way which could hopefully lead to safer user behaviours.
+
+In the future this experiment could be refined, resolving any limitations and be ran on a much larger population of participants. This would confirm the inital, small scale results while refining the experiment's setup. The open nature of the internet would allow research to expand from this paper in a number of ways, all in the aid of building user trust online.
+
+\bibliographystyle{abbrv}
+\bibliography{qùalend}
+
+\appendix
+
+\href{}{Pre-experiment task list}
+\href{https://docs.google.com/forms/d/1rxjwT5qNs5T0jX5pM8qvoTl9-ulS-rINJ75bUryIIcI/viewform}{Online post-experiment survey}
+
+\end{document}
